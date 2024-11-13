@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Análise de Sistema</title>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 10px;
+        }
+        h1 {
+            font-size: 45px;
+            color: cyan;
+            margin-bottom: 10px;
+            text-align: center; 
+        }
+        h2 {
+            font-size: 28px;
+            margin-bottom: 10px;
+            font-weight: normal;
+            line-height: 1.4;
+            text-align: center;
+        }
+        h3 {
+            font-size: 35px;
+            color: cyan;
+            margin-top: 15px;
+            margin-bottom: 5px;
+            text-align: center;
+        }
+        p {
+            font-size: 20px;
+            line-height: 1.6;
+            margin-bottom: 15px;
+            text-align: left;
+            margin-left: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Análise de Sistema</h1>
+    <h2>A análise de sistema é o processo de estudar um sistema existente ou proposto para identificar necessidades, requisitos e aprimoramentos, visando implementar soluções mais eficazes e eficientes.</h2>
+    
+    <h3>Fases da Análise de Sistema:</h3>
+    <p><strong>Levantamento de Requisitos:</strong> Coleta de informações sobre as necessidades do usuário e do sistema para definir as funcionalidades e o escopo do projeto.</p>
+    <p><strong>Modelagem de Dados:</strong> Estruturação de dados para facilitar a organização, armazenamento e recuperação de informações, geralmente com diagramas de entidade-relacionamento.</p>
+    <p><strong>Modelagem de Processos:</strong> Representação dos processos que o sistema deverá executar, identificando o fluxo de informações e operações.</p>
+    <p><strong>Documentação:</strong> Criação de documentos detalhados que descrevem os requisitos, fluxos de trabalho e especificações técnicas, servindo como guia para desenvolvimento e manutenção.</p>
+    <p><strong>Avaliação e Validação:</strong> Verificação se o sistema proposto atende aos requisitos e se os processos modelados são viáveis e funcionais.</p>
+</body>
+</html>
