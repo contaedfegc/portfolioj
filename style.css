@@ -1,0 +1,10 @@
+.imagem-centralizada {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.imagem-centralizada img {
+    width: 200px;
+    height: auto;
+    border-radius: 10px;
+}

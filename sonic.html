@@ -22,7 +22,6 @@
     let keys = {};
     let level = 1;
     let enemies = generateEnemies(level);
-    let platforms = [{ x: 200, y: canvas.height - 150, width: 100, height: 10 }];
     let ground = { x: 0, y: canvas.height - 10, width: canvas.width * 3, height: 10, color: "green" };
     let boss = null;
     
@@ -42,6 +41,7 @@
       if (keys["ArrowLeft"]) { player.x -= currentSpeed; cameraX -= currentSpeed; }
       if (keys["Space"] && !player.jumping) { player.velocityY = -10; player.jumping = true; }
       player.velocityY += player.gravity;
+      player.y += player.velocityY;
 
       if (player.y >= canvas.height - player.height) {
         player.y = canvas.height - player.height;
@@ -55,21 +55,17 @@
         }
       }
 
-     
-      if (level === 23 || player.kills >= 10) {
+      if (level === 23 || player.kills >= enemies.length) {
         player.superMode = true;
         player.color = "yellow";
         player.maxSpeed = 70;    
       }
 
-    
       if (sonicNormalCooldown > 0) sonicNormalCooldown--;
       if (superSonicCooldown > 0) superSonicCooldown--;
 
-    
       if (keys["KeyT"] && sonicNormalCooldown === 0) {
         sonicNormalCooldown = 15;
-       
         for (let enemy of enemies) {
           if (enemy.alive && Math.abs(player.x - enemy.x) < 100) { 
             enemy.alive = false;
@@ -78,10 +74,8 @@
         }
       }
 
-
       if (player.superMode && keys["KeyT"] && superSonicCooldown === 0) {
         superSonicCooldown = 5; 
-
         for (let enemy of enemies) {
           if (enemy.alive && Math.abs(player.x - enemy.x) < 150) { 
             enemy.alive = false;
@@ -90,14 +84,6 @@
         }
       }
 
-      
-      if (level === 23) {
-        player.gravity = 0.5; 
-        if (keys["ArrowUp"]) player.y -= currentSpeed;
-        if (keys["ArrowDown"]) player.y += currentSpeed;
-      }
-
-     
       if (boss && boss.alive) {
         if (player.x < boss.x + boss.width && player.x + player.width > boss.x && player.y + player.height > boss.y) {
           boss.health--;
@@ -105,7 +91,6 @@
         }
       }
 
-      
       if (enemies.every(enemy => !enemy.alive) && (!boss || !boss.alive)) { nextLevel(); }
     }
 
@@ -116,28 +101,12 @@
       ctx.fillStyle = player.superMode ? "yellow" : player.color;
       ctx.fillRect(player.x - cameraX, player.y, player.width, player.height);
 
-      if (sonicNormalCooldown < 15 && keys["KeyT"]) {
-        ctx.fillStyle = "blue";
-        ctx.beginPath();
-        ctx.arc(player.x, player.y, 100, 0, 2 * Math.PI);
-        ctx.fill();
-      }
-
-      
-      if (player.superMode && superSonicCooldown < 5 && keys["KeyT"]) {
-        ctx.fillStyle = "yellow";
-        ctx.beginPath();
-        ctx.arc(player.x, player.y, 150, 0, 2 * Math.PI);
-        ctx.fill();
-      }
-
       for (let enemy of enemies) {
         if (enemy.alive) {
           ctx.fillStyle = enemy.color;
           ctx.fillRect(enemy.x - cameraX, enemy.y, enemy.width, enemy.height);
         }
       }
-
 
       if (boss && boss.alive) {
         ctx.fillStyle = "black";
@@ -148,29 +117,14 @@
     function generateEnemies(level) {
       let enemyArray = [];
       for (let i = 0; i < level + 2; i++) {
-        let type = i % 3; 
         let enemy = { 
           x: 400 + i * 200, 
           y: canvas.height - 50, 
           width: 50, 
           height: 50, 
-          alive: true 
+          alive: true,
+          color: ["red", "green", "purple"][i % 3]
         };
-
-        switch (type) {
-          case 0:
-            enemy.color = "red";
-            break;
-          case 1:
-            enemy.color = "green";
-            enemy.velocityX = 1; 
-            break;
-          case 2:
-            enemy.color = "purple";
-            enemy.velocityX = -1;
-            break;
-        }
-
         enemyArray.push(enemy);
       }
       return enemyArray;
