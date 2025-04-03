@@ -60,18 +60,35 @@
             -webkit-text-stroke: 1px #000; 
             text-stroke: 1px #000;
         }
-        ul {
-            background: rgba(255, 255, 255, 0.1);
-            padding: 20px;
-            border-radius: 8px;
-            width: fit-content;
-            margin: auto;
-            font-size: 18px;
-            -webkit-text-stroke: 1px #000; 
-            text-stroke: 1px #000;
+        .card-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            margin-top: 40px;
         }
-        strong {
+        .card {
+            background-color: rgba(0, 0, 0, 0.6);
+            border-radius: 12px;
+            padding: 20px;
+            width: 280px;
+            text-align: center;
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.7);
+            transition: 0.3s;
+        }
+        .card:hover {
+            transform: scale(1.05);
+            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.9);
+        }
+        .card h4 {
+            font-size: 24px;
             color: #2fff00;
+            margin-bottom: 15px;
+        }
+        .card p {
+            font-size: 16px;
+            color: #ffffff;
+            line-height: 1.5;
         }
         .game-container {
             text-align: center;
@@ -110,33 +127,45 @@
 <body>
     <h1>Estrutura de dados de jogos</h1>
 
-    
     <h3>Estruturas de Dados em Jogos</h3>
     <p>Os jogos utilizam diversas estruturas de dados para otimizar desempenho e eficiência:</p>
-    <ul>
-        <li><strong>Árvores e Grafos:</strong> Usados para pathfinding (A*), organização de objetos (Scene Graphs) e divisão espacial (BSP Trees).</li>
-        <li><strong>Filas e Pilhas:</strong> Essenciais para gerenciamento de eventos e estados de jogo.</li>
-        <li><strong>Quadtrees e Octrees:</strong> Otimizam colisões e renderização em jogos 2D e 3D.</li>
-        <li><strong>Tabelas Hash:</strong> Utilizadas para buscas rápidas em inventários e cache de texturas.</li>
-        <li><strong>Listas Ligadas e Arrays Dinâmicos:</strong> Facilitam a manipulação de objetos como projéteis e partículas.</li>
-        <li><strong>Heaps:</strong> Utilizados para gerenciar filas de prioridade, como em sistemas de IA e pathfinding.</li>
-        <li><strong>Dicionários:</strong> Auxiliam na organização de dados associativos, como atributos de personagens e bancos de diálogos.</li>
-        <li><strong>Matrizes:</strong> Fundamentais para representar tabuleiros de jogos e mapas 2D.</li>
-        <li><strong>Grafos de Navegação (NavMesh):</strong> Melhoram o deslocamento de personagens e NPCs em cenários complexos.</li>
-        <li><strong>BVH (Bounding Volume Hierarchies):</strong> Usado para acelerar detecção de colisão e renderização em gráficos 3D.</li>
-        <li><strong>KD-Trees:</strong> Aplicadas para buscas eficientes em espaços 3D, como na renderização e colisão.</li>
-        <li><strong>Spatial Hashing:</strong> Técnica que organiza objetos no espaço 3D para otimizar verificações de colisão.</li>
-        <li><strong>Voxel Grids:</strong> Representação volumétrica do ambiente para simulações físicas e iluminação global.</li>
-    </ul>
-    
+
+    <div class="card-container">
+        <div class="card">
+            <h4>Árvores e Grafos</h4>
+            <p>Usados para pathfinding (A*), organização de objetos (Scene Graphs) e divisão espacial (BSP Trees).</p>
+        </div>
+        <div class="card">
+            <h4>Filas e Pilhas</h4>
+            <p>Essenciais para gerenciamento de eventos e estados de jogo.</p>
+        </div>
+        <div class="card">
+            <h4>Quadtrees e Octrees</h4>
+            <p>Otimizam colisões e renderização em jogos 2D e 3D.</p>
+        </div>
+        <div class="card">
+            <h4>Tabelas Hash</h4>
+            <p>Utilizadas para buscas rápidas em inventários e cache de texturas.</p>
+        </div>
+        <div class="card">
+            <h4>Listas Ligadas</h4>
+            <p>Facilitam a manipulação de objetos como projéteis e partículas.</p>
+        </div>
+        <div class="card">
+            <h4>Heaps</h4>
+            <p>Utilizados para gerenciar filas de prioridade, como em sistemas de IA e pathfinding.</p>
+        </div>
+    </div>
+
     <div class="game-container">
         <h3>Jogue Mario 64 Complete</h3>
         <iframe src="https://sm64-embed.glitch.me/start.html" allowfullscreen></iframe>
     </div>
-    
+
     <a href="https://mathadventure1.github.io/sm64/sm64/index.html" class="button" target="_blank">Site completo</a>
 </body>
 </html>
+
 
 
 
