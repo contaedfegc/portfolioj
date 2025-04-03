@@ -6,112 +6,138 @@
     <title>História da Programação</title>
     <style>
         body {
-            background: url('https://pplware.sapo.pt/wp-content/uploads/2017/07/linux_pc_velho_1.jpg') no-repeat center center fixed;
-            background-size: cover;
-            color: #E0E0E0;
-            font-family: 'Arial', sans-serif;
+            background: linear-gradient(45deg, #ffeb3b, #ff9800); /* Gradiente de amarelo */
+            color: #FFFFFF;
+            font-family: 'Poppins', sans-serif;
             margin: 0;
             padding: 20px;
-            backdrop-filter: blur(5px);
+            backdrop-filter: blur(8px);
+            background-size: cover;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
         h1 {
-            font-size: 52px;
-            color: #73fb3dbd;
+            font-size: 56px;
+            color: #03a9f4;
             margin-bottom: 20px;
             text-align: center;
             text-transform: uppercase;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+            -webkit-text-stroke: 2px #000; /* Contorno preto */
+            text-stroke: 2px #000; /* Para browsers que não suportam WebKit */
         }
         h2 {
-            font-size: 26px;
+            font-size: 28px;
             margin-bottom: 20px;
-            font-weight: normal;
-            line-height: 1.6;
+            font-weight: bold;
             text-align: center;
+            color: #ffffff;
+            -webkit-text-stroke: 1px #000; /* Contorno preto */
+            text-stroke: 1px #000;
         }
         h3 {
             font-size: 32px;
-            color: #6e00f4c4;
+            color: #ae0909;
             margin-top: 25px;
             margin-bottom: 15px;
             text-align: center;
+            text-transform: uppercase;
+            -webkit-text-stroke: 1px #000; /* Contorno preto */
+            text-stroke: 1px #000;
         }
         p {
-            font-size: 19px;
+            font-size: 20px;
             line-height: 1.9;
             margin-bottom: 15px;
             text-align: justify;
-            margin-left: 20px;
-            margin-right: 20px;
-            background: rgba(0, 0, 0, 0.6);
-            padding: 10px;
+            margin: 0 auto;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 15px;
             border-radius: 8px;
+            max-width: 900px;
+            -webkit-text-stroke: 1px #000; /* Contorno preto */
+            text-stroke: 1px #000;
         }
-        .imagem-centralizada {
-            text-align: center;
-            margin: 30px 0;
-        }
-        .imagem-centralizada img {
-            width: 200px;
-            height: auto;
-            border-radius: 10px;
+        ul {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 8px;
+            width: fit-content;
+            margin: auto;
+            font-size: 18px;
+            -webkit-text-stroke: 1px #000; /* Contorno preto */
+            text-stroke: 1px #000;
         }
         strong {
-            color: #81D4FA;
+            color: #2fff00;
+        }
+        .game-container {
+            text-align: center;
+            margin-top: 40px;
+        }
+        .game-container iframe {
+            width: 100%; /* 100% de largura */
+            max-width: 1200px; /* Largura máxima aumentada */
+            height: 380px; /* Altura ajustada */
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+        }
+        .button {
+            display: block;
+            width: 250px;
+            margin: 20px auto;
+            padding: 12px;
+            background-color: #4caf50;
+            color: white;
+            text-align: center;
+            font-size: 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: 0.3s;
+            text-decoration: none;
+            font-weight: bold;
+            box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);
+        }
+        .button:hover {
+            background-color: #388e3c;
+            transform: scale(1.05);
         }
     </style>
 </head>
 <body>
     <h1>História da Programação</h1>
-    <h2>A programação de computadores evoluiu ao longo dos séculos, desde conceitos matemáticos abstratos até linguagens sofisticadas que impulsionam a tecnologia moderna.</h2>
+    <h2>A evolução da programação ao longo do tempo</h2>
     
-    <h3>Origens e Primeiros Passos:</h3>
-    <p><strong>Ada Lovelace:</strong> No século XIX, Ada Lovelace criou o primeiro algoritmo para ser processado por uma máquina, tornando-se a primeira programadora da história.</p>
-    <p><strong>Máquina de Turing:</strong> Alan Turing desenvolveu o conceito de uma máquina teórica que poderia executar qualquer algoritmo, base fundamental da computação moderna.</p>
+    <h3>Estruturas de Dados em Jogos</h3>
+    <p>Os jogos utilizam diversas estruturas de dados para otimizar desempenho e eficiência:</p>
+    <ul>
+        <li><strong>Árvores e Grafos:</strong> Usados para pathfinding (A*), organização de objetos (Scene Graphs) e divisão espacial (BSP Trees).</li>
+        <li><strong>Filas e Pilhas:</strong> Essenciais para gerenciamento de eventos e estados de jogo.</li>
+        <li><strong>Quadtrees e Octrees:</strong> Otimizam colisões e renderização em jogos 2D e 3D.</li>
+        <li><strong>Tabelas Hash:</strong> Utilizadas para buscas rápidas em inventários e cache de texturas.</li>
+        <li><strong>Listas Ligadas e Arrays Dinâmicos:</strong> Facilitam a manipulação de objetos como projéteis e partículas.</li>
+        <li><strong>Heaps:</strong> Utilizados para gerenciar filas de prioridade, como em sistemas de IA e pathfinding.</li>
+        <li><strong>Dicionários:</strong> Auxiliam na organização de dados associativos, como atributos de personagens e bancos de diálogos.</li>
+        <li><strong>Matrizes:</strong> Fundamentais para representar tabuleiros de jogos e mapas 2D.</li>
+        <li><strong>Grafos de Navegação (NavMesh):</strong> Melhoram o deslocamento de personagens e NPCs em cenários complexos.</li>
+        <li><strong>BVH (Bounding Volume Hierarchies):</strong> Usado para acelerar detecção de colisão e renderização em gráficos 3D.</li>
+        <li><strong>KD-Trees:</strong> Aplicadas para buscas eficientes em espaços 3D, como na renderização e colisão.</li>
+        <li><strong>Spatial Hashing:</strong> Técnica que organiza objetos no espaço 3D para otimizar verificações de colisão.</li>
+        <li><strong>Voxel Grids:</strong> Representação volumétrica do ambiente para simulações físicas e iluminação global.</li>
+    </ul>
     
-    <div class="imagem-centralizada">
-        <img src="https://i.postimg.cc/MTQy2P5D/Chat-GPT-Perguntas-sobe-PI.png" alt="Imagem sobre PI">
+    <div class="game-container">
+        <h3>Jogue Mario 64 Complete</h3>
+        <iframe src="https://sm64-embed.glitch.me/start.html" allowfullscreen></iframe>
     </div>
     
-    <h3>Primeiras Linguagens de Programação:</h3>
-    <p><strong>Assembly:</strong> A linguagem Assembly surgiu na década de 1940 para permitir um controle mais direto sobre o hardware dos primeiros computadores.</p>
-    <p><strong>Fortran e COBOL:</strong> Desenvolvidas nos anos 50, essas linguagens foram essenciais para aplicações científicas e comerciais.</p>
-    
-    <h3>Avanços nas Décadas Seguintes:</h3>
-    <p><strong>Linguagens Estruturadas:</strong> Nos anos 70, linguagens como C e Pascal introduziram melhores estruturas para organização do código.</p>
-    <p><strong>Paradigma Orientado a Objetos:</strong> Nos anos 80, Smalltalk e C++ popularizaram a orientação a objetos, permitindo maior reutilização e organização do código.</p>
-    
-    <h3>Era da Internet e Linguagens Modernas:</h3>
-    <p><strong>Java e JavaScript:</strong> Nos anos 90, Java trouxe portabilidade e JavaScript se tornou essencial para aplicações web dinâmicas.</p>
-    <p><strong>Python e Ruby:</strong> Ganhando destaque nos anos 2000, essas linguagens se tornaram populares pela simplicidade e produtividade.</p>
-    
-    <h3>Futuro da Programação:</h3>
-    <p><strong>Inteligência Artificial e Computação Quântica:</strong> Novas linguagens e paradigmas estão surgindo para atender às demandas da IA e da computação quântica.</p>
-    <p><strong>Low-code e No-code:</strong> A tendência de democratizar o desenvolvimento permite que mais pessoas criem softwares sem conhecimento técnico avançado.</p>
-
-    <h3>Metodologia de Programação</h3>
-    <p>A metodologia de programação envolve o conjunto de práticas e princípios para organizar, desenvolver, testar e manter o código de maneira eficiente. Entre as abordagens mais comuns, temos:</p>
-    <ul>
-        <li><strong>Programação Ágil:</strong> Adota ciclos curtos de desenvolvimento e feedback constante do cliente para promover flexibilidade e adaptabilidade.</li>
-        <li><strong>Desenvolvimento Baseado em Testes (TDD):</strong> Foca em escrever testes antes de desenvolver as funcionalidades, garantindo maior robustez e qualidade no código.</li>
-        <li><strong>Programação Orientada a Objetos (OOP):</strong> Organiza o código em classes e objetos para facilitar a reutilização e modularidade.</li>
-    </ul>
-
-    <h3>Caso de Uso Aplicado: Desenvolvimento de um Sistema de Gestão de Tarefas</h3>
-    <p>Suponhamos que estamos desenvolvendo um sistema de gestão de tarefas simples para um cliente. Para tal, a metodologia ágil será adotada, com iterações semanais para implementar e revisar funcionalidades. O sistema terá as seguintes funcionalidades:</p>
-    <ul>
-        <li>Cadastro de tarefas</li>
-        <li>Marcação de status de tarefas (pendente, concluída)</li>
-        <li>Filtro por data de vencimento e prioridade</li>
-    </ul>
-    <p>O primeiro ciclo de desenvolvimento será focado no backend, criando a estrutura de dados e as APIs necessárias. O segundo ciclo será para a implementação da interface de usuário. Ao final de cada ciclo, será feito um teste com os usuários para garantir que as funcionalidades atendem às necessidades.</p>
-
-    <h3>Bibliografia</h3>
-    <ul>
-        <li><a href="https://postimages.org/" target="_blank">Postimages - Plataforma de compartilhamento de imagens</a></li>
-        <li><a href="https://me-qr.com/pt/qr-code-generator/link" target="_blank">Me-QR - Gerador de QR Codes</a></li>
-        <li><a href="https://chatgpt.com/" target="_blank">ChatGPT - Ferramenta de IA para criação de conteúdo</a></li>
-    </ul>
+    <a href="https://mathadventure1.github.io/sm64/sm64/index.html" class="button" target="_blank">Site completo</a>
 </body>
 </html>
+
+
 
 
