@@ -1,172 +1,82 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Estrutura de dados de jogos</title>
+    <title>Portfólio - Curso de Programação de Informática</title>
     <style>
         body {
-            background: linear-gradient(45deg, #ffeb3b, #ff9800); /* Gradiente de amarelo */
-            color: #FFFFFF;
-            font-family: 'Poppins', sans-serif;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
             margin: 0;
-            padding: 20px;
-            backdrop-filter: blur(8px);
-            background-size: cover;
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+            padding: 0;
         }
-        h1 {
-            font-size: 56px;
-            color: #03a9f4;
-            margin-bottom: 20px;
-            text-align: center;
-            text-transform: uppercase;
-            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
-            -webkit-text-stroke: 2px #000; /* Contorno preto */
-            text-stroke: 2px #000; /* Para browsers que não suportam WebKit */
-        }
-        h2 {
-            font-size: 28px;
-            margin-bottom: 20px;
-            font-weight: bold;
-            text-align: center;
-            color: #ffffff;
-            -webkit-text-stroke: 1px #000; /* Contorno preto */
-            text-stroke: 1px #000;
-        }
-        h3 {
-            font-size: 32px;
-            color: #ae0909;
-            margin-top: 25px;
-            margin-bottom: 15px;
-            text-align: center;
-            text-transform: uppercase;
-            -webkit-text-stroke: 1px #000; /* Contorno preto */
-            text-stroke: 1px #000;
-        }
-        p {
-            font-size: 20px;
-            line-height: 1.9;
-            margin-bottom: 15px;
-            text-align: justify;
-            margin: 0 auto;
-            background: rgba(0, 0, 0, 0.7);
-            padding: 15px;
-            border-radius: 8px;
-            max-width: 900px;
-            -webkit-text-stroke: 1px #000; 
-            text-stroke: 1px #000;
-        }
-        .card-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-            justify-content: center;
-            margin-top: 40px;
-        }
-        .card {
-            background-color: rgba(0, 0, 0, 0.6);
-            border-radius: 12px;
-            padding: 20px;
-            width: 280px;
-            text-align: center;
-            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.7);
-            transition: 0.3s;
-        }
-        .card:hover {
-            transform: scale(1.05);
-            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.9);
-        }
-        .card h4 {
-            font-size: 24px;
-            color: #2fff00;
-            margin-bottom: 15px;
-        }
-        .card p {
-            font-size: 16px;
-            color: #ffffff;
-            line-height: 1.5;
-        }
-        .game-container {
-            text-align: center;
-            margin-top: 40px;
-        }
-        .game-container iframe {
-            width: 100%; /* 100% de largura */
-            max-width: 1200px; 
-            height: 380px; /* Altura ajustada */
-            border: none;
-            border-radius: 10px;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
-        }
-        .button {
-            display: block;
-            width: 250px;
-            margin: 20px auto;
-            padding: 12px;
-            background-color: #4caf50;
+
+        header {
+            background-color: #1e90ff;
             color: white;
+            padding: 20px 0;
             text-align: center;
-            font-size: 20px;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: 0.3s;
-            text-decoration: none;
-            font-weight: bold;
-            box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);
         }
-        .button:hover {
-            background-color: #388e3c;
-            transform: scale(1.05);
+
+        main {
+            padding: 40px 20px;
+            max-width: 800px;
+            margin: auto;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        h1, h2 {
+            color: #1e90ff;
+        }
+
+        .modulo-link {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 12px 20px;
+            background-color: #1e90ff;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        .modulo-link:hover {
+            background-color: #005fbb;
+        }
+
+        footer {
+            text-align: center;
+            padding: 15px;
+            background-color: #ddd;
+            margin-top: 40px;
         }
     </style>
 </head>
 <body>
-    <h1>Estrutura de dados de jogos</h1>
 
-    <h3>Estruturas de Dados em Jogos</h3>
-    <p>Os jogos utilizam diversas estruturas de dados para otimizar desempenho e eficiência:</p>
+    <header>
+        <h1>Portfólio - Programação de Informática</h1>
+    </header>
 
-    <div class="card-container">
-        <div class="card">
-            <h4>Árvores e Grafos</h4>
-            <p>Usados para pathfinding (A*), organização de objetos (Scene Graphs) e divisão espacial (BSP Trees).</p>
-        </div>
-        <div class="card">
-            <h4>Filas e Pilhas</h4>
-            <p>Essenciais para gerenciamento de eventos e estados de jogo.</p>
-        </div>
-        <div class="card">
-            <h4>Quadtrees e Octrees</h4>
-            <p>Otimizam colisões e renderização em jogos 2D e 3D.</p>
-        </div>
-        <div class="card">
-            <h4>Tabelas Hash</h4>
-            <p>Utilizadas para buscas rápidas em inventários e cache de texturas.</p>
-        </div>
-        <div class="card">
-            <h4>Listas Ligadas</h4>
-            <p>Facilitam a manipulação de objetos como projéteis e partículas.</p>
-        </div>
-        <div class="card">
-            <h4>Heaps</h4>
-            <p>Utilizados para gerenciar filas de prioridade, como em sistemas de IA e pathfinding.</p>
-        </div>
-    </div>
+    <main>
+        <h2>Introdução</h2>
+        <p>
+            Olá, eu sou o Dinis Cristino, Bem-vindo ao meu portfólio do curso de Programação de Informática. Ao longo deste curso,
+            explorei diversas áreas da programação, desde os conceitos básicos até o desenvolvimento de aplicações
+            mais avançadas.
+        </p>
+        <p>
+            Este portfólio tem como objetivo apresentar os projetos, aprendizagens e atividades realizadas durante o curso.
+        </p>
 
-    <div class="game-container">
-        <h3>Jogue Mario 64 Complete</h3>
-        <iframe src="https://sm64-embed.glitch.me/start.html" allowfullscreen></iframe>
-    </div>
+        <a class="modulo-link" href="moduluuno.html" target="_blank">Aceder aos Módulos</a>
+    </main>
 
-    <a href="https://mathadventure1.github.io/sm64/sm64/index.html" class="button" target="_blank">Site completo</a>
+    <footer>
+        &copy; 2025 - Portfólio de Programação de Informática - Escola Profissional De Fundão™
+    </footer>
+
 </body>
 </html>
-
-
-
-
-
